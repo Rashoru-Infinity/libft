@@ -3,7 +3,7 @@ CFLAGS	= -Wall -Wextra -Werror
 AR	= ar
 AFLAGS	= cr
 RM	= rm -f
-SRCS	= main.c ft_memset.c
+SRCS	= main.c ft_memset.c ft_bzero.c
 OBJS 	= ${SRCS:.c=.o}
 TARGET	= libft.a
 TEST	= main
@@ -29,5 +29,7 @@ test	:	${OBJS}
 
 tclean	:	fclean
 	${RM} ${TEST}
+
+ret	:	tclean test
 
 .PHONY	: clean fclean all re
