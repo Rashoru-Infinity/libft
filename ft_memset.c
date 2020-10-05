@@ -2,15 +2,10 @@
 
 void *ft_memset(void *buf, int ch, size_t n)
 {
-	void	*buf2;
-	size_t	offset;
+	unsigned char	*buf2;
 
-	buf2 = buf;
-	offset = 0;
-	while (offset < n)
-	{
-		*((int *)(buf2 + offset)) = ch;
-		++offset;
-	}
+	buf2 = (unsigned char *)buf;
+	while (n-- > 0)
+		*(buf2++) = (unsigned char)ch;
 	return buf;
 }
