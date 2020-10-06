@@ -17,5 +17,6 @@
 void	*ft_memset(void *buf, int ch, size_t n);
 void	ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void *buf1, const void *buf2, size_t n);
+void	*ft_memccpy(void *dest, const void *src, int c, size_t n);
 
 #endif

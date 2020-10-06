@@ -6,7 +6,7 @@
 int main(void) {
 	const char str[] = "0123456789";
 	char *scpy = (char *)malloc(sizeof(char) * 10);
-	scpy = ft_memcpy(scpy, str + 2, 5);
+	scpy = ft_memccpy(scpy, str + 2, '6', 5);
 	printf("%s\n", scpy);
 	free(scpy);
 	return 0;
