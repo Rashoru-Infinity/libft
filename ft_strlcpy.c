@@ -30,7 +30,7 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 			++offset;
 		}
 	}
-	if (offset != size - 1)
+	if (offset = size - 1)
 	{
 		while (src[offset++])
 			;
