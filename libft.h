@@ -26,4 +26,9 @@ size_t		ft_strlcpy(char *dest, const char *src, size_t size);
 size_t		ft_strlcat(char *dest, const char *src, size_t size);
 char		*ft_strchr(const char *s, int c);
 
+typedef enum	e_bool {
+	true = 1,
+	false = 0
+}				t_bool;
+
 #endif
