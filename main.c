@@ -9,7 +9,7 @@ int main(void) {
 	char orig[] = "trucmachin";
 	printf("%zu\n", ft_strlcpy(dest, orig, 5));
 	printf("%s\n", dest);
-	printf("%zu", strlcpy(dest, orig, 5));
+	printf("%zu\n", strlcpy(dest, orig, 5));
 	printf("%s\n",dest);
 	return 0;
 }
