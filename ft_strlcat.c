@@ -27,5 +27,5 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 		++offset;
 	}
 	dest[offset + dest_size] = 0;
-	return (offset + dest_size);
+	return (size + dest_size);
 }
