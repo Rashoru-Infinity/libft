@@ -20,7 +20,10 @@ void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 	while (offset < n)
 	{
 		if (*(unsigned char *)(src + offset) == (unsigned char)c)
+		{
+			++offset;
 			break ;
+		}
 		*(unsigned char *)(dest + offset) = *(unsigned char *)(src + offset);
 		++offset;
 	}
