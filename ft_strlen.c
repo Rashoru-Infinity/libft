@@ -12,3 +12,12 @@
 
 #include "libft.h"
 
+size_t	ft_strlen(const char *s)
+{
+	size_t offset;
+
+	offset = 0;
+	while (*(s + offset++))
+		;
+	return (offset);
+}

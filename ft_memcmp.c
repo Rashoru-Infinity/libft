@@ -11,16 +11,16 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 int	ft_memcmp(const void *buf1, const void *buf2, size_t n)
 {
-	size_t offset;
+	size_t	offset;
+	int	delta;
 
 	offset = 0;
 	while (offset < n)
 	{
-		int delta =  *(unsigned char *)(buf1 + offset) - *(unsigned char *)(buf2 + offset);
+		delta = *(unsigned char *)(buf1 + offset) - *(unsigned char *)(buf2 + offset);
 		printf("%c,%c\n", *(unsigned char *)(buf1 + offset), *(unsigned char *)(buf2 + offset));
 		if (delta != 0)
 			return (delta);
