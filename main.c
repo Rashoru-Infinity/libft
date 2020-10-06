@@ -5,8 +5,11 @@
 #include <stdlib.h>
 
 int main(void) {
-	char str1[] = "string1";
-	char str2[10] = "";
-	printf("%s\n", (char *)ft_memccpy(str1,str2,'r', 7));
+	char dest[15];
+	char orig[] = "trucmachin";
+	printf("%zu\n", ft_strlcpy(dest, orig, 5));
+	printf("%s\n", dest);
+	printf("%zu", strlcpy(dest, orig, 5));
+	printf("%s\n",dest);
 	return 0;
 }

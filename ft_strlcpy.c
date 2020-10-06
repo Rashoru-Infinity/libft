@@ -12,15 +12,28 @@
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dest, const char *src. size_t size)
+size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
 	size_t offset;
 
-	while (offset < size - 1)
+	offset = 0;
+	if (size != 0)
 	{
-		dest[offset] = src[offset];
-		++offset;
+		while (offset < size - 1)
+		{
+			if (!src[offset])
+			{
+				dest[offset] = 0;
+				break ;
+			}
+			dest[offset] = src[offset];
+			++offset;
+		}
 	}
-	dest[offset] = 0;
-	return (offset);
+	if (offset != size - 1)
+	{
+		while (src[offset++])
+			;
+	}
+	return (offset - 1);
 }
