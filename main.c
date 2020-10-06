@@ -4,10 +4,9 @@
 #include <stdlib.h>
 
 int main(void) {
-	const char str[] = "0123456789";
-	char *scpy = (char *)malloc(sizeof(char) * 10);
-	scpy = ft_memccpy(scpy, str + 2, '6', 5);
-	printf("%s\n", scpy);
-	free(scpy);
+	char str[] = "abcdefghijklmnopqrstu";
+	printf("%s\n", str);
+	ft_memmove(str, str + 12, 5);
+	printf("%s\n", str);
 	return 0;
 }
