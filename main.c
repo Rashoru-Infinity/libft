@@ -5,11 +5,11 @@
 #include <stdlib.h>
 
 int main(void) {
-	char str[] = "string";
-	char search = 'i';
-	printf("%p\n", strchr(str, search));
-	printf("%p\n", ft_strchr(str, search));	
-	printf("%p\n", strchr(str, '\0'));
-	printf("%p\n", ft_strchr(str, '\0'));	
+	char str[] = "ubuntu";
+	char search = 'u';
+	printf("%p\n", strrchr(str, search));
+	printf("%p\n", ft_strrchr(str, search));	
+	printf("%p\n", strrchr(str, '\0'));
+	printf("%p\n", ft_strrchr(str, '\0'));	
 	return 0;
 }
