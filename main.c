@@ -6,7 +6,7 @@
 
 int main(void) {
 	char str1[] = "string1";
-	char str2[] = "string2";
-	printf("%d\n", ft_memcmp(str1,str2,7));
+	char str2[10] = "";
+	printf("%s\n", (char *)ft_memccpy(str1,str2,'r', 7));
 	return 0;
 }
