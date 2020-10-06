@@ -9,7 +9,7 @@ int main(void) {
 	char search = 'i';
 	printf("%p\n", strchr(str, search));
 	printf("%p\n", ft_strchr(str, search));	
-	printf("%p\n", strchr(str, 'a'));
-	printf("%p\n", ft_strchr(str, 'a'));	
+	printf("%p\n", strchr(str, '\0'));
+	printf("%p\n", ft_strchr(str, '\0'));	
 	return 0;
 }
