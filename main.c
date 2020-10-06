@@ -1,12 +1,12 @@
 #include <stdio.h>
 #include "libft.h"
+#include <string.h>
 #include <strings.h>
 #include <stdlib.h>
 
 int main(void) {
-	char str[] = "abcdefghijklmnopqrstu";
+	char str[100] = "abcdefghijklmnopqrstu";
 	printf("%s\n", str);
-	ft_memmove(str + 12, str , 5);
-	printf("%s\n", str);
+	printf("%s\n", (unsigned char *)ft_memchr(str, 'f' , sizeof(str) / sizeof(str[0])));
 	return 0;
 }
