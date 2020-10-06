@@ -12,16 +12,17 @@
 
 #include "libft.h"
 
+typedef unsigned char	t_uchr;
+
 int	ft_memcmp(const void *buf1, const void *buf2, size_t n)
 {
 	size_t	offset;
-	int	delta;
+	int		delta;
 
 	offset = 0;
 	while (offset < n)
 	{
-		delta = *(unsigned char *)(buf1 + offset) - *(unsigned char *)(buf2 + offset);
-		printf("%c,%c\n", *(unsigned char *)(buf1 + offset), *(unsigned char *)(buf2 + offset));
+		delta = *(t_uchr *)(buf1 + offset) - *(t_uchr *)(buf2 + offset);
 		if (delta != 0)
 			return (delta);
 		++offset;
