@@ -5,8 +5,9 @@
 #include <stdlib.h>
 
 int main(void) {
-	char str[100] = "abcdefghijklmnopqrstu";
-	printf("%s\n", str);
-	printf("%s\n", (unsigned char *)ft_memchr(str, 'f' , sizeof(str) / sizeof(str[0])));
+	char str1[] = "string1";
+	char str2[] = "string2";
+	printf("ft_diff : %d\n", ft_memcmp(str1, str2, 7));
+	printf("original diff : %d\n", memcmp(str1, str2, 7));
 	return 0;
 }
