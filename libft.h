@@ -22,6 +22,6 @@ void		*ft_memmove(void *dest, const void *src, size_t n);
 void		*ft_memchr(const void *dest, int ch, size_t n);
 int			ft_memcmp(const void *buf1, const void *buf2, size_t n);
 size_t		ft_strlen(const char *s);
-size_t		ft_strlcpy(char *dest, char *src, size_t size);
+size_t		ft_strlcpy(char *dest, const char *src, size_t size);
 
 #endif
