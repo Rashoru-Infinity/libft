@@ -5,11 +5,11 @@
 #include <stdlib.h>
 
 int main(void) {
-	char dest[15];
-	char orig[] = "trucmachin";
-	printf("%zu\n", ft_strlcpy(dest, orig, 5));
+	char dest[15] = "abc";
+	char src[] = "trucmachin";
+	printf("%zu\n", ft_strlcat(dest, src, 5));
 	printf("%s\n", dest);
-	printf("%zu\n", strlcpy(dest, orig, 5));
-	printf("%s\n",dest);
+	printf("%zu\n", strlcat(dest, src, 5));
+	printf("%s\n", dest);
 	return 0;
 }
