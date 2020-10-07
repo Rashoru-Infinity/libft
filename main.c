@@ -6,11 +6,9 @@
 #include <ctype.h>
 
 int main(void) {
-	char c = 0;
-	for (int i = 0;i < 255;i++) {
-		//printf("%d\n", isalpha(c));
-		printf("%d\n", ft_isalpha(c));
-		++c;
+	for (int i = -10;i < 15;i++) {
+		printf("org : %d->%d\n", i, isdigit(i));
+		printf("ft : %d->%d\n", i, ft_isdigit(i));
 	}
 	return 0;
 }
