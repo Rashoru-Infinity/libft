@@ -6,7 +6,7 @@
 #include <ctype.h>
 
 int main(void) {
-	for (int i = -10;i < 15;i++) {
+	for (int i = '0' - 3;i < '9' + 3;i++) {
 		printf("org : %d->%d\n", i, isdigit(i));
 		printf("ft : %d->%d\n", i, ft_isdigit(i));
 	}
