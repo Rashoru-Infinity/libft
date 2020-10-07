@@ -18,20 +18,21 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t offset;
 	size_t little_size;
 
+	head = 0;
 	little_size = 0;
 	while (*(unsigned char *)(little + little_size))
 		++little_size;
 	while (head + little_size < len)
 	{
+		offset = 0;
 		while (offset < little_size)
 		{
-			offset = 0;
-			if (offset == little_size)
-				return ((char *)(big + head));
-			if ((unsigned char *)(big + offset) != (unsigned char *)(little + offset))
+			if (*(unsigned char *)(big + head + offset) != *(unsigned char *)(little + offset))
 				break ;
 			++offset;
 		}
+		if (offset == little_size)
+			return ((char *)(big + head));
 		++head;
 	}
 	return (NULL);
