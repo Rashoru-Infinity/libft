@@ -5,11 +5,14 @@
 #include <stdlib.h>
 
 int main(void) {
-	char str1[] = "ubuntu";
-	char str2[] = "ubunt";
-	printf("strncmp : %d\n", strncmp(str1, str2, 5));
-	printf("ft_strncmp : %d\n", ft_strncmp(str1, str2, 5));
-	printf("strncmp : %d\n", strncmp(str1, str2, 6));
-	printf("ft_strncmp : %d\n", ft_strncmp(str1, str2, 6));
+	char str1[] = "999999999999";
+	printf("%d\n", atoi(str1));
+	printf("%d\n", ft_atoi(str1));
+	char str2[] = "+-+1234";
+	printf("%d\n", atoi(str2));
+	printf("%d\n", ft_atoi(str2));
+	char str3[] = "-\t1234";
+	printf("%d\n", atoi(str3));
+	printf("%d\n", ft_atoi(str3));
 	return 0;
 }
