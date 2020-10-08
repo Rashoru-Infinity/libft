@@ -7,8 +7,8 @@
 
 int main(void) {
 	int size = 5;
-	int	*p = ft_calloc(size, sizeof(int));
-	//int *p = calloc(size, sizeof(int));
+	//int	*p = ft_calloc(size, sizeof(int));
+	int *p = calloc(size, sizeof(int));
 	if (p)
 	{
 		for (int i = 0;i < size;++i)
