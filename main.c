@@ -6,15 +6,16 @@
 #include <ctype.h>
 
 int main(void) {
-	int size = 5;
-	//int	*p = ft_calloc(size, sizeof(int));
-	int *p = calloc(size, sizeof(int));
-	if (p)
-	{
-		for (int i = 0;i < size;++i)
-		{
-			printf("%d : %d\n", i, p[i]);
-		}
+	char str[] = "string";
+	char strnull[] = "";
+	char *p = ft_strdup(str);
+	if (p){
+		printf("%s\n", p);
+		free(p);
+	}
+	p = ft_strdup(strnull);
+	if(p){
+		printf("%s\n", p);
 		free(p);
 	}
 	return 0;

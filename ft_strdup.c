@@ -11,3 +11,25 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+
+char	*ft_strdup(const char *s)
+{
+	size_t	len;
+	char	*p;
+	size_t	offset;
+
+	len = 0;
+	while (*(s + len))
+		++len;
+	if ((p = (char *)malloc(len)))
+	{
+		offset = 0;
+		while (offset < len)
+		{
+			*(p + offset) = *(char *)(s + offset);
+			++offset;
+		}
+		*(p + offset) = 0;
+	}
+	return (p);
+}
