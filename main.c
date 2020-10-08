@@ -7,8 +7,8 @@
 
 int main(void) {
 	for (int i = -999;i < 1000;i++) {
-		printf("%d->%d\n", i, isdigit(i));
-		//printf("%d->%d\n", i, ft_isdigit(i));
+		printf("%d->%d\n", i, isalnum(i));
+		//printf("%d->%d\n", i, ft_isalnum(i));
 	}
 	return 0;
 }
