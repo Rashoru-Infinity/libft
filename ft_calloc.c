@@ -20,7 +20,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	if ((p = malloc(nmemb * size)))
 	{
 		offset = 0;
-		while (offset < size)
+		while (offset < size * nmemb)
 		{
 			*(char *)(p + offset) = 0;
 			++offset;
