@@ -7,8 +7,8 @@
 
 int main(void) {
 	for (int i = 0;i < 256;i++) {
-		//printf("%d->%d\n", i, isascii(i));
-		printf("%d->%d\n", i, ft_isascii(i));
+		printf("%d->%d\n", i, isprint(i));
+		printf("%d->%d\n", i, ft_isprint(i));
 	}
 	return 0;
 }
