@@ -6,7 +6,7 @@
 #include <ctype.h>
 
 int main(void) {
-	for (int i = 0;i < 256;i++) {
+	for (int i = -256;i < 256;i++) {
 		printf("%d->%d\n", i, isprint(i));
 		printf("%d->%d\n", i, ft_isprint(i));
 	}
