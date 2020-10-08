@@ -30,7 +30,7 @@ void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 			offset = i;
 			found = true;
 		}
-		++i
+		++i;
 	}
 	if (found)
 		return (dest + offset);
