@@ -6,17 +6,8 @@
 #include <ctype.h>
 
 int main(void) {
-	char str[] = "string";
-	char strnull[] = "";
-	char *p = ft_strdup(str);
-	if (p){
-		printf("%s\n", p);
-		free(p);
-	}
-	p = ft_strdup(strnull);
-	if(p){
-		printf("%s\n", p);
-		free(p);
-	}
+	char *src = NULL;
+	char *dest = NULL;
+	printf("%p\n", ft_memcpy(dest, src, 1));
 	return 0;
 }
