@@ -15,13 +15,21 @@
 void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
 	size_t offset;
+	size_t found_idx;
 
 	offset = 0;
-	while (offset < n)
+	found_idx = 0;
+	while (found_idx < n)
 	{
-		*(char *)(dest + offset) = *(char *)(src + offset);
-		if (*(char *)(src + offset) == (char)c)
+		if (*(unsigned char *)(src + found_idx) == (unsigned char)c)
 			break ;
+		++found_idx;
+	}
+	if (found_idx == n)
+		return (NULL);
+	while (offset <= found_idx)
+	{
+		*(unsigned char *)(dest + offset) = *(unsigned char *)(src + offset);
 		++offset;
 	}
 	return (dest + offset);
