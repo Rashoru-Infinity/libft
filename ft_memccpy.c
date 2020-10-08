@@ -25,12 +25,12 @@ void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 	{
 		if (!found)
 			*(unsigned char *)(dest + i) = *(unsigned char *)(src + i);
-		++i;
 		if (*(unsigned char *)(dest + i) == (unsigned char)c)
 		{
 			offset = i;
 			found = true;
 		}
+		++i
 	}
 	if (found)
 		return (dest + offset);
