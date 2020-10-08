@@ -17,19 +17,19 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	size_t offset;
 
 	offset = 0;
-	while (*(s1 + offset) && *(s2 + offset))
+	while (*(unsigned char *)(s1 + offset) && *(unsigned char *)(s2 + offset))
 	{
-		if (*(s1 + offset) != *(s2 + offset))
+		if (*(unsigned char *)(s1 + offset) != *(unsigned char *)(s2 + offset))
 			break ;
 		if (offset + 1 == n)
 			break ;
 		++offset;
 	}
-	if (!*(s1 + offset) && !*(s2 + offset))
+	if (!*(unsigned char *)(s1 + offset) && !*(unsigned char *)(s2 + offset))
 		return (0);
-	if (!*(s1 + offset))
+	if (!*(unsigned char *)(s1 + offset))
 		return (-*(s2 + offset));
-	if (!*(s2 + offset))
-		return (*(s1 + offset));
-	return (*(s1 + offset) - *(s2 + offset));
+	if (!*(unsigned char *)(s2 + offset))
+		return (*(unsigned char *)(s1 + offset));
+	return (*(unsigned char *)(s1 + offset) - *(unsigned char *)(s2 + offset));
 }
