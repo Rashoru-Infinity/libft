@@ -7,8 +7,8 @@
 
 int main(void) {
 	for (int i = -999;i < 1000;i++) {
-		//printf("%d->%d\n", i, isprint(i));
-		printf("%d->%d\n", i, ft_isprint(i));
+		//printf("%d->%d\n", i, isdigit(i));
+		printf("%d->%d\n", i, ft_isdigit(i));
 	}
 	return 0;
 }
