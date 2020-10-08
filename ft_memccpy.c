@@ -27,8 +27,9 @@ void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 			*(unsigned char *)(dest + i) = *(unsigned char *)(src + i);
 		if (*(unsigned char *)(dest + i) == (unsigned char)c && !found)
 		{
-			offset = i;
+			offset = ++i;
 			found = true;
+			break ;
 		}
 		++i;
 	}
