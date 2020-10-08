@@ -14,7 +14,7 @@
 
 int	ft_isprint(int c)
 {
-	if (' ' <= (unsigned char)c && (unsigned char)c <= '~')
+	if (' ' <= c && c <= '~')
 	{
 		return (1);
 	}
