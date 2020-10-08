@@ -6,9 +6,16 @@
 #include <ctype.h>
 
 int main(void) {
-	for (int i = -1000;i < 1000;i++) {
-		//printf("%d->%d\n", i, tolower(i));
-		printf("%d->%d\n", i, ft_tolower(i));
+	int size = 5;
+	//int	*p = ft_calloc(size, sizeof(int));
+	int *p = calloc(size, sizeof(int));
+	if (p)
+	{
+		for (int i = 0;i < size;++i)
+		{
+			printf("%d : %d\n", i, p[i]);
+		}
+		free(p);
 	}
 	return 0;
 }
