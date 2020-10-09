@@ -26,9 +26,9 @@ int	ft_atoi(const char *nptr)
 		++offset;
 	if (nptr[offset] == '-' || nptr[offset] == '+')
 	{
-		++offset;
 		if (nptr[offset] == '-')
 			sign = -1;
+		++offset;
 	}
 	while ('0' <= nptr[offset] && nptr[offset] <= '9')
 	{
