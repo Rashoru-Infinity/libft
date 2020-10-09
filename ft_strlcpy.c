@@ -20,10 +20,12 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 	src_size = 0;
 	while ((unsigned char)src[src_size])
 		++src_size;
+	if (size == 0)
+		return (src_size);
 	offset = 0;
 	while (offset < size)
 	{
-		if (src[offset])
+		if (offset < src_size)
 			dest[offset] = src[offset];
 		else
 			dest[offset] = 0;
