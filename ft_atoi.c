@@ -30,8 +30,6 @@ int	ft_atoi(const char *nptr)
 		if (nptr[offset] == '-')
 			sign = -1;
 	}
-	if (nptr[offset] == '+')
-		++offset;
 	while ('0' <= nptr[offset] && nptr[offset] <= '9')
 	{
 		num *= 10;
