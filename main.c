@@ -8,9 +8,9 @@
 int main(void) {
 	char dest[30];
 	char src[] = "string";
-	printf("%zu\n", strlcpy(dest, src, 6));
+	printf("%zu\n", strlcpy(dest, src, 30));
 	printf("%s\n", dest);
-	printf("%zu\n", ft_strlcpy(dest, src, 6));
+	printf("%zu\n", ft_strlcpy(dest, src, 30));
 	printf("%s\n", dest);
 	return 0;
 }
