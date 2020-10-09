@@ -16,12 +16,20 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	unsigned int	offset;
 	char			*sub;
+	unsigned int	src_size;
 
+	src_size = 0;
+	while (s[src_size])
+		++src_size;
+	if (src_size < start)
+		len = 0;
 	if ((sub = (char *)malloc(len + 1)))
 	{
 		offset = 0;
 		while (offset < len)
 		{
+			if (!s[start + offset])
+				break ;
 			sub[offset] = s[start + offset];
 			++offset;
 		}
