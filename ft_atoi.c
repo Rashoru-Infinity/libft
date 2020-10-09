@@ -13,15 +13,17 @@
 #include "libft.h"
 #include <limits.h>
 
+typedef unsigned long	t_ul;
+
 int	ft_atoi(const char *nptr)
 {
 	size_t			offset;
 	int				sign;
-	unsigned long	num;
+	unsigned long	n;
 
 	offset = 0;
 	sign = 1;
-	num = 0;
+	n = 0;
 	while ((9 <= nptr[offset] && nptr[offset] <= 13) || nptr[offset] == ' ')
 		++offset;
 	if (nptr[offset] == '-' || nptr[offset] == '+')
@@ -32,12 +34,12 @@ int	ft_atoi(const char *nptr)
 	}
 	while ('0' <= nptr[offset] && nptr[offset] <= '9')
 	{
-		if (ULONG_MAX / 10 < num || num * 10 > ULONG_MAX - nptr[offset] - '0')
+		if (ULONG_MAX / 10 < n || n * 10 > ULONG_MAX - nptr[offset] - '0')
 			return (sign > 0 ? -1 : 0);
-		num *= 10;
-		num += nptr[offset++] - '0';
+		n *= 10;
+		n += nptr[offset++] - '0';
 	}
-	if ((sign < 0 && num <= (unsigned long)LONG_MAX + 1) || (sign > 0 && num <= LONG_MAX))
-		return ((int)((long)num * sign));
+	if ((sign < 0 && n <= (t_ul)LONG_MAX + 1) || (sign > 0 && n <= LONG_MAX))
+		return ((int)((long)n * sign));
 	return (sign > 0 ? -1 : 0);
 }
