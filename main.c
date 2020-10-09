@@ -6,48 +6,20 @@
 #include <ctype.h>
 
 int main(void) {
-	char dest[30] = "dest part\0";
+	char dest1[30] = "dest part\0";
+	char dest2[30] = "dest part\0";
+	char dest3[30] = "dest part\0";
+	char dest4[30] = "dest part\0";
 	char src[] = "src part";
 	printf("-------------------------------------------\n");
-	printf("%zu\n", strlcpy(dest, src, 16));
+	printf("%zu\n", strlcpy(dest1, src, 16));
 	printf("%s\n", dest);
-	dest = {'d', 'e', 's', 't', ' ', 'p', 'a', 'r', 't', '\0'};
-	printf("%zu\n", ft_strlcpy(dest, src, 16));
+	printf("%zu\n", ft_strlcpy(dest2, src, 16));
 	printf("%s\n", dest);
-	dest = {'d', 'e', 's', 't', ' ', 'p', 'a', 'r', 't', '\0'};
-	printf("-------------------------------------------\n");
-	printf("%zu\n", strlcpy(dest, src, 17));
-	printf("%s\n", dest);
-	dest = {'d', 'e', 's', 't', ' ', 'p', 'a', 'r', 't', '\0'};
-	printf("%zu\n", ft_strlcpy(dest, src, 17));
-	printf("%s\n", dest);
-	dest = {'d', 'e', 's', 't', ' ', 'p', 'a', 'r', 't', '\0'};
-	printf("-------------------------------------------\n");
-	printf("%zu\n", strlcpy(dest, src, 18));
-	printf("%s\n", dest);
-	dest = {'d', 'e', 's', 't', ' ', 'p', 'a', 'r', 't', '\0'};
-	printf("%zu\n", ft_strlcpy(dest, src, 18));
-	printf("%s\n", dest);
-	dest = {'d', 'e', 's', 't', ' ', 'p', 'a', 'r', 't', '\0'};
-	printf("-------------------------------------------\n");
-	printf("%zu\n", strlcpy(dest, src, 30));
-	printf("%s\n", dest);
-	dest = {'d', 'e', 's', 't', ' ', 'p', 'a', 'r', 't', '\0'};
-	printf("%zu\n", ft_strlcpy(dest, src, 30));
-	printf("%s\n", dest);
-	dest = {'d', 'e', 's', 't', ' ', 'p', 'a', 'r', 't', '\0'};
-	printf("-------------------------------------------\n");
-	printf("%zu\n", strlcpy(dest, src, 0));
-	printf("%s\n", dest);
-	dest = {'d', 'e', 's', 't', ' ', 'p', 'a', 'r', 't', '\0'};
-	printf("%zu\n", ft_strlcpy(dest, src, 0));
-	printf("%s\n", dest);
-	dest = {'d', 'e', 's', 't', ' ', 'p', 'a', 'r', 't', '\0'};
 	printf("------------null byte test-----------------\n");
-	printf("%zu\n", strlcpy(dest, "", 30));
+	printf("%zu\n", strlcpy(dest3, "", 30));
 	printf("%s\n", dest);
-	dest = {'d', 'e', 's', 't', ' ', 'p', 'a', 'r', 't', '\0'};
-	printf("%zu\n", ft_strlcpy(dest, "", 30));
+	printf("%zu\n", ft_strlcpy(dest4, "", 30));
 	printf("%s\n", dest);	
 	return 0;
 }
