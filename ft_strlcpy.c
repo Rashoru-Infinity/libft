@@ -33,9 +33,6 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 	else
 		return (size);
 	if (offset == size - 1)
-	{
-		while (src[offset])
-			++offset;
-	}
-	return (offset - 1);
+		dest[offset] = 0;
+	return (offset);
 }
