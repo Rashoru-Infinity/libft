@@ -37,7 +37,7 @@ int	ft_atoi(const char *nptr)
 		num *= 10;
 		num += nptr[offset++] - '0';
 	}
-	if ((sign < 0 && num <= -LONG_MIN) || sign > 0 && num <= LONG_MAX)
+	if ((sign < 0 && num <= LONG_MAX + 1) || (sign > 0 && num <= LONG_MAX))
 		return ((int)((long)num * sign));
 	return (sign > 0 ? -1 : 0);
 }
