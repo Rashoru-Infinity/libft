@@ -14,25 +14,20 @@
 
 size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
+	size_t src_size;
 	size_t offset;
 
+	src_size = 0;
+	while ((unsigned char)src[src_size])
+		++src_size;
 	offset = 0;
-	if (size != 0)
+	while (offset < size)
 	{
-		while (offset < size - 1)
-		{
-			if (!src[offset])
-			{
-				dest[offset++] = 0;
-				break ;
-			}
+		if (src[offset])
 			dest[offset] = src[offset];
-			++offset;
-		}
+		else
+			dest[offset] = 0;
+		++offset;
 	}
-	else
-		return (size);
-	if (offset == size - 1)
-		dest[offset] = 0;
-	return (offset);
+	return (src_size);
 }
