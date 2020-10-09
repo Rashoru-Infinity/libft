@@ -13,13 +13,13 @@ int main(void) {
 	char src[] = "src part";
 	printf("-------------------------------------------\n");
 	printf("%zu\n", strlcpy(dest1, src, 16));
-	printf("%s\n", dest);
+	printf("%s\n", dest1);
 	printf("%zu\n", ft_strlcpy(dest2, src, 16));
-	printf("%s\n", dest);
+	printf("%s\n", dest2);
 	printf("------------null byte test-----------------\n");
 	printf("%zu\n", strlcpy(dest3, "", 30));
-	printf("%s\n", dest);
+	printf("%s\n", dest3);
 	printf("%zu\n", ft_strlcpy(dest4, "", 30));
-	printf("%s\n", dest);	
+	printf("%s\n", dest4);	
 	return 0;
 }
