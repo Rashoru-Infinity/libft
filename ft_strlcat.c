@@ -6,7 +6,7 @@
 /*   By: khagiwar <khagiwar@student.42tokyo.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/06 21:22:43 by khagiwar          #+#    #+#             */
-/*   Updated: 2020/10/06 21:22:45 by khagiwar         ###   ########.fr       */
+/*   Updated: 2020/10/09 12:21:55 by khagiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 		++offset;
 	}
 	dest[offset + dest_size] = 0;
-	if (size < src_size + dest_size)
+	if (size < dest_size)
 		return (src_size + size);
 	return (src_size + dest_size);
 }
