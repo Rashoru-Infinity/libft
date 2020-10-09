@@ -22,13 +22,11 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	little_size = 0;
 	while (*(unsigned char *)(little + little_size))
 		++little_size;
-	while (true)
+	while (offset + head <= len)
 	{
 		offset = 0;
 		while (offset < little_size)
 		{
-			if (offset + head > len)
-				break ;
 			if (*(unsigned char *)(big + head + offset) !=\
 				*(unsigned char *)(little + offset))
 				break ;
