@@ -22,7 +22,7 @@ int	ft_atoi(const char *nptr)
 	offset = 0;
 	sign = 1;
 	num = 0;
-	while ('9' <= nptr[offset] && nptr[offset] <= '13')
+	while (9 <= nptr[offset] && nptr[offset] <= 13)
 		++offset;
 	if (nptr[offset] == '-' || nptr[offset] == '+')
 	{
