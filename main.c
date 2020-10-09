@@ -6,9 +6,13 @@
 #include <ctype.h>
 
 int main(void) {
-	char *str;
+	char *sub;
 	char *tmp = "this is a normal test";
-	str = ft_strdup(tmp);
-	printf("%s\n", str);
+	sub = ft_substr(tmp, 5, 8);
+	if (sub)
+	{
+		printf("%s\n", sub);
+		free(sub);
+	}
 	return 0;
 }

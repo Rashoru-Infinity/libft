@@ -19,6 +19,9 @@ typedef enum	e_bool {
 	false = 0
 }				t_bool;
 
+/*
+**part1
+*/
 void		*ft_memset(void *buf, int ch, size_t n);
 void		ft_bzero(void *s, size_t n);
 void		*ft_memcpy(void *dest, const void *src, size_t n);
@@ -43,5 +46,9 @@ int			ft_toupper(int c);
 int			ft_tolower(int c);
 void		*ft_calloc(size_t nmemb, size_t size);
 char		*ft_strdup(const char *s);
+/*
+**part2*
+*/
+char		*ft_substr(char const *s, unsigned int start, size_t len);
 
 #endif
