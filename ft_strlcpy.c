@@ -23,7 +23,7 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 		{
 			if (!src[offset])
 			{
-				dest[offset] = 0;
+				dest[offset++] = 0;
 				break ;
 			}
 			dest[offset] = src[offset];
