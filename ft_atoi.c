@@ -15,9 +15,9 @@
 
 int	ft_atoi(const char *nptr)
 {
-	size_t	offset;
-	int		sign;
-	long	num;
+	size_t			offset;
+	int				sign;
+	unsigned long	num;
 
 	offset = 0;
 	sign = 1;
@@ -32,8 +32,12 @@ int	ft_atoi(const char *nptr)
 	}
 	while ('0' <= nptr[offset] && nptr[offset] <= '9')
 	{
+		if (ULONG_MAX / 10 < num || num * 10 > ULONG_MAX - nptr[offset] - '0')
+			return (sign > 0 ? -1 : 0);
 		num *= 10;
 		num += nptr[offset++] - '0';
 	}
-	return ((int)(num * sign));
+	if ((sign < 0 && num <= -LONG_MIN) || sign > 0 && num <= LONG_MAX)
+		return ((int)((long)num * sign));
+	return (sign > 0 ? -1 : 0);
 }
