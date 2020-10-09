@@ -22,7 +22,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	little_size = 0;
 	while (*(unsigned char *)(little + little_size))
 		++little_size;
-	while (offset + head <= len)
+	while (true)
 	{
 		offset = 0;
 		while (offset < little_size)
@@ -35,6 +35,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 		if (offset == little_size)
 			return ((char *)(big + head));
 		++head;
+		if (head + little_size > len)
+			break ;
 	}
 	return (NULL);
 }
