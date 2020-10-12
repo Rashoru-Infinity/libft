@@ -6,13 +6,13 @@
 #include <ctype.h>
 
 int main(void) {
-	char *concatenation;
-	char *str1 = "aaa";
-	char *str2 = "bbb";
-	if ((concatenation = ft_strjoin(str1,str2)))
+	char *trim;
+	char *str1 = "abcdefghijklmnopqrstuvwxyz";
+	char *str2 = "hij";
+	if ((trim = ft_strtrim(str1,str2)))
 	{
-		printf("%s\n", concatenation);
-		free(concatenation);
+		printf("%s\n", trim);
+		free(trim);
 	}
 	return 0;
 }
