@@ -46,6 +46,8 @@ char		*ft_strtrim(char const *s1, char const *set)
 	char	*str;
 
 	str = NULL;
+	if (ft_strlen(s1))
+		return (str);
 	i = 0;
 	while (i < 256)
 		del[i++] = 0;
