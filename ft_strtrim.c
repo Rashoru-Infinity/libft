@@ -27,7 +27,7 @@ static char	*trimcpy(char *str, char const *s1, char del[256])
 	end = ft_strlen(s1) - 1i;
 	while (end > start)
 	{
-		if (!del[(int)s1[end]])
+		if (del[(int)s1[end]])
 			break ;
 		--end;
 	}
@@ -46,7 +46,7 @@ char		*ft_strtrim(char const *s1, char const *set)
 	char	*str;
 
 	str = NULL;
-	if (!ft_strlen(s1))
+	if (ft_strlen(s1) == 0)
 		return (str);
 	i = 0;
 	while (i < 256)
