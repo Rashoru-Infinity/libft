@@ -12,32 +12,45 @@
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s1, char const *set)
+static char	*trimcpy(char *str, char const *s1, char del[256])
+{
+	size_t	start;
+	size_t	end;
+
+	start = 0;
+	while (s1[start])
+	{
+		if (!del[(int)s1[start]])
+			break ;
+		++start;
+	}
+	end = ft_strlen(s1) - 1i;
+	while (end > start)
+	{
+		if (!del[(int)s1[end]])
+			break ;
+		--end;
+	}
+	if ((str = (char *)malloc(end - start + 1)))
+	{
+		ft_memcpy(str, &s1[start], end - start);
+		str[end - start] = 0;
+	}
+	return (str);
+}
+
+char		*ft_strtrim(char const *s1, char const *set)
 {
 	char 	del[256];
 	size_t	i;
-	size_t	j;
 	char	*str;
 
+	str = NULL;
 	i = 0;
 	while (i < 256)
 		del[i++] = 0;
 	i = 0;
-	j = 0;
 	while (set[i])
-	{
-		if (!del[(int)set[i]])
-			++j;
 		del[(int)set[i++]] = 1;
-	}
-	if ((str = (char *)malloc(ft_strlen(s1) - j + 1)))
-	{
-		i = 0;
-		j = 0;
-		while (s1[i])
-			if (!del[(int)s1[i++]])
-				str[j++] = s1[i - 1];
-		str[j] = 0;
-	}
-	return (str);
+	return (trimcpy(str, s1, del));
 }

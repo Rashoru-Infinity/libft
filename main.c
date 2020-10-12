@@ -7,8 +7,8 @@
 
 int main(void) {
 	char *trim;
-	char *str1 = "abcdefghijklmnopqrstuvwxyz";
-	char *str2 = "hij";
+	char *str1 = "\nabcdef\tghijklmnopqrstuvwxyz\n";
+	char *str2 = "\n";
 	if ((trim = ft_strtrim(str1,str2)))
 	{
 		printf("%s\n", trim);
