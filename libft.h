@@ -50,5 +50,6 @@ char		*ft_strdup(const char *s);
 **part2*
 */
 char		*ft_substr(char const *s, unsigned int start, size_t len);
+char		*ft_strjoin(char const *s1, char const *s2);
 
 #endif

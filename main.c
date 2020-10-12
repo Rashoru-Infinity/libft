@@ -6,13 +6,13 @@
 #include <ctype.h>
 
 int main(void) {
-	char *sub;
-	char *tmp = "this is a normal test";
-	sub = ft_substr(tmp, 5, 8);
-	if (sub)
+	char *concatenation;
+	char *str1 = "aaa";
+	char *str2 = "bbb";
+	if ((concatenation = ft_strjoin(str1,str2)))
 	{
-		printf("%s\n", sub);
-		free(sub);
+		printf("%s\n", concatenation);
+		free(concatenation);
 	}
 	return 0;
 }
