@@ -44,14 +44,21 @@ char		*ft_strtrim(char const *s1, char const *set)
 {
 	int		del[256];
 	size_t	i;
+	char	*str;
 
+	str = NULL;
 	if (ft_strlen(s1) == 0)
-		return (NULL);
+	{
+		if ((str = (char *)malloc(1)))
+			str[0] = 0;
+		return (str);
+	}
 	i = 0;
 	while (i < 256)
 		del[i++] = 0;
 	i = 0;
 	while (set[i])
 		del[(int)set[i++]] = 1;
-	return (trimcpy(s1, del));
+	str = trimcpy(s1, del);
+	return (str);
 }
