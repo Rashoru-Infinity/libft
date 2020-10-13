@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static int	power(int base, int exp)
 {
@@ -44,7 +43,7 @@ static int	count_digit(int n)
 
 static char	*conv(long cpy, int minus, int digit)
 {
-	char 	*str;
+	char	*str;
 	int		offset;
 	int		div;
 
@@ -66,7 +65,6 @@ static char	*conv(long cpy, int minus, int digit)
 	}
 	return (str);
 }
-		
 
 char		*ft_itoa(int n)
 {
@@ -76,7 +74,6 @@ char		*ft_itoa(int n)
 	long	cpy;
 
 	digit = count_digit(n);
-	printf("%d\n", digit);
 	minus = 0;
 	cpy = n;
 	if (n < 0)

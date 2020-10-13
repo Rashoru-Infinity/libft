@@ -63,7 +63,7 @@ static char		*split_copy(char *head, size_t size)
 	if ((str = (char *)malloc(size + 1)))
 	{
 		offset = 0;
-		while  (offset < size)
+		while (offset < size)
 		{
 			str[offset] = head[offset];
 			++offset;
