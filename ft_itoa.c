@@ -10,4 +10,80 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+#include <stdio.h>
 
+static int	power(int base, int exp)
+{
+	int i;
+	int n;
+
+	i = 0;
+	n = 1;
+	while (i++ < exp)
+		n *= base;
+	return (n);
+}
+
+static int	count_digit(int n)
+{
+	int		digit;
+	long	l;
+
+	l = n;
+	digit = 1;
+	if (n < 0)
+		l = -l;
+	while (l / 10 != 0)
+	{
+		l /= 10;
+		++digit;
+	}
+	return (digit);
+}
+
+static char	*conv(long cpy, int minus, int digit)
+{
+	char 	*str;
+	int		offset;
+	int		div;
+
+	if ((str = (char *)malloc(digit + minus + 1)))
+	{
+		offset = 0;
+		div = power(10, digit - 1);
+		if (minus)
+			str[offset++] = '-';
+		if (cpy == 0)
+			str[offset++] = '0';
+		while (offset < digit + minus && cpy != 0)
+		{
+			str[offset++] = '0' + cpy / div;
+			cpy %= cpy / div * div;
+			div /= 10;
+		}
+		str[offset] = 0;
+	}
+	return (str);
+}
+		
+
+char		*ft_itoa(int n)
+{
+	int		digit;
+	int		minus;
+	char	*str;
+	long	cpy;
+
+	digit = count_digit(n);
+	printf("%d\n", digit);
+	minus = 0;
+	cpy = n;
+	if (n < 0)
+	{
+		minus = 1;
+		cpy = -cpy;
+	}
+	str = conv(cpy, minus, digit);
+	return (str);
+}

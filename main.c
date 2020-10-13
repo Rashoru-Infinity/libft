@@ -4,21 +4,16 @@
 #include <strings.h>
 #include <stdlib.h>
 #include <ctype.h>
+#include <limits.h>
 
 int main(void) {
-	char **strs;
-	char *str1 = "\nabc\n\ndef\ng\n";
-	char str2 = '\n';
-	printf("%zu\n", sizeof(char *));
-	printf("%zu\n", sizeof(char));
-	if ((strs = ft_split(str1, str2)))
+	int n = INT_MIN;
+	printf("%d\n", n);
+	char *p = ft_itoa(n);
+	if (p)
 	{
-		for (int i = 0;strs[i] != NULL;++i)
-		{
-			printf("%s\n", strs[i]);
-			free(strs[i]);
-		}
-		free(strs);
+		printf("%s\n", p);
+		free(p);
 	}
 	return 0;
 }
