@@ -6,14 +6,18 @@
 #include <ctype.h>
 #include <limits.h>
 
+char func(unsigned int n, char c)
+{
+	return (c + n) % 256;
+}
+
 int main(void) {
-	int n = INT_MIN;
-	printf("%d\n", n);
-	char *p = ft_itoa(n);
+	char (*f)(unsigned int, char) = func;
+	char const *s = "string";
+	char *p = ft_strmapi(s, f);
 	if (p)
 	{
 		printf("%s\n", p);
 		free(p);
 	}
-	return 0;
 }
