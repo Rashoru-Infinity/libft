@@ -23,7 +23,7 @@ static size_t	count_words(char const *s, char c)
 	offset = 0;
 	while (s[offset])
 	{
-		if (s[offset] == c && !ign)
+		if ((unsigned char)s[offset] == (unsigned char)c && !ign)
 		{
 			++words;
 			ign = true;
@@ -42,7 +42,7 @@ static size_t	get_length(char *head, char c)
 	max = 0;
 	while (head[max])
 	{
-		if (head[max] == c)
+		if ((unsigned char)head[max] == (unsigned char)c)
 			break ;
 		++max;
 	}
