@@ -7,7 +7,8 @@
 #include <limits.h>
 
 int main(void) {
-	int fd = 1;
-	char *c = "string";
-	ft_putendl_fd(c, fd);
+	int n = 3865610;
+	char *c = ft_itoa(n);
+	printf("%s\n", c);
+	free(c);
 }

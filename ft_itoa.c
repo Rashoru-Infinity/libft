@@ -59,6 +59,8 @@ static char	*conv(long cpy, int minus, int digit)
 		{
 			str[offset++] = '0' + cpy / div;
 			cpy %= cpy / div * div;
+			if (cpy == 0)
+				str[offset++] = '0';
 			div /= 10;
 		}
 		str[offset] = 0;
