@@ -16,8 +16,9 @@ int main(void) {
 		for (int i = 0;strs[i] != NULL;++i)
 		{
 			printf("%s\n", strs[i]);
-			free(strs);
+			free(strs[i]);
 		}
+		free(strs);
 	}
 	return 0;
 }
