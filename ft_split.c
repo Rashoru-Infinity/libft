@@ -25,7 +25,8 @@ static size_t	count_words(char const *s, char c)
 	{
 		if (!s[offset])
 		{
-			++words;
+			if (countable)
+				++words;
 			break ;
 		}
 		if ((unsigned char)s[offset] != (unsigned char)c)
