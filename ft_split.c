@@ -81,6 +81,8 @@ char			**ft_split(char const *s, char c)
 	size_t	words;
 	size_t	word_len;
 
+	if (!s)
+		return (NULL);
 	words = count_words(s, c);
 	if ((strs = (char **)malloc(8 * (words + 1))))
 	{
