@@ -6,18 +6,9 @@
 #include <ctype.h>
 #include <limits.h>
 
-char func(unsigned int n, char c)
-{
-	return (c + n) % 256;
-}
-
 int main(void) {
-	char (*f)(unsigned int, char) = func;
-	char const *s = "string";
-	char *p = ft_strmapi(s, f);
-	if (p)
-	{
-		printf("%s\n", p);
-		free(p);
-	}
+	int fd = 1;
+	char c = 'c';
+	//write(1, "c\n", 2);
+	ft_putchar_fd(c, fd);
 }
