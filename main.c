@@ -8,7 +8,6 @@
 
 int main(void) {
 	int fd = 1;
-	char c = 'c';
-	//write(1, "c\n", 2);
-	ft_putchar_fd(c, fd);
+	char *c = "string";
+	ft_putstr_fd(c, fd);
 }

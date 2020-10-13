@@ -10,4 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
+void	ft_putstr_fd(char *s, int fd)
+{
+	size_t size;
+
+	if (!s)
+		return ;
+	size = 0;
+	while (s[size])
+		++size;
+	write(fd, s, size);
+}
