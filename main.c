@@ -7,8 +7,6 @@
 #include <limits.h>
 
 int main(void) {
-	int n = 3865610;
-	char *c = ft_itoa(n);
-	printf("%s\n", c);
-	free(c);
+	int n = 3800610;
+	ft_putnbr_fd(n, 1);
 }
