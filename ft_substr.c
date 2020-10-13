@@ -18,6 +18,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char			*sub;
 	unsigned int	src_size;
 
+	if (!s)
+		return (NULL);
 	src_size = 0;
 	while (s[src_size])
 		++src_size;
