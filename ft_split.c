@@ -11,25 +11,26 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 static size_t	count_words(char const *s, char c)
 {
 	size_t offset;
 	size_t words;
-	t_bool ign;
+	t_bool countable;
 
-	words = 1;
-	ign = false;
+	words = 0;
+	countable = false;
 	offset = 0;
 	while (s[offset])
 	{
-		if ((unsigned char)s[offset] != (unsigned char)c && ign)
+		if ((unsigned char)s[offset] != (unsigned char)c)
+			countable = true;
+		if ((unsigned char)s[offset] == (unsigned char)c && countable)
 		{
-			ign = false;
+			countable = false;
 			++words;
 		}
-		if ((unsigned char)s[offset] == (unsigned char)c)
-			ign = true;
 		++offset;
 	}
 	return (words);
@@ -76,6 +77,7 @@ char			**ft_split(char const *s, char c)
 	size_t	word_len;
 
 	words = count_words(s, c);
+	printf("%zu\n", words);
 	if ((strs = (char **)malloc(8 * (words + 1))))
 	{
 		strs[words] = NULL;

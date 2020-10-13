@@ -7,7 +7,7 @@
 
 int main(void) {
 	char **strs;
-	char *str1 = "abc\n\ndef\ng\n";
+	char *str1 = "\nabc\n\ndef\ng\n";
 	char str2 = '\n';
 	printf("%zu\n", sizeof(char *));
 	printf("%zu\n", sizeof(char));
