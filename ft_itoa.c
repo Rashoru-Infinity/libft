@@ -53,14 +53,11 @@ static char	*conv(long cpy, int minus, int digit)
 		div = power(10, digit - 1);
 		if (minus)
 			str[offset++] = '-';
-		if (cpy == 0)
-			str[offset++] = '0';
-		while (offset < digit + minus && cpy != 0)
+		while (offset < digit + minus)
 		{
 			str[offset++] = '0' + cpy / div;
-			cpy %= cpy / div * div;
-			if (cpy == 0)
-				str[offset++] = '0';
+			if (cpy / div != 0)
+				cpy %= cpy / div * div;
 			div /= 10;
 		}
 		str[offset] = 0;
