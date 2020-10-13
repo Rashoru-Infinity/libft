@@ -21,8 +21,13 @@ static size_t	count_words(char const *s, char c)
 	words = 0;
 	countable = false;
 	offset = 0;
-	while (s[offset])
+	while (true)
 	{
+		if (s[offset])
+		{
+			++words;
+			break ;
+		}
 		if ((unsigned char)s[offset] != (unsigned char)c)
 			countable = true;
 		if ((unsigned char)s[offset] == (unsigned char)c && countable)
