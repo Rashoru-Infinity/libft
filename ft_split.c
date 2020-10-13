@@ -23,7 +23,7 @@ static size_t	count_words(char const *s, char c)
 	offset = 0;
 	while (true)
 	{
-		if (s[offset])
+		if (!s[offset])
 		{
 			++words;
 			break ;
