@@ -9,5 +9,5 @@
 int main(void) {
 	int fd = 1;
 	char *c = "string";
-	ft_putstr_fd(c, fd);
+	ft_putendl_fd(c, fd);
 }
