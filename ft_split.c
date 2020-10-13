@@ -10,4 +10,86 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
+static size_t	count_words(char const *s, char c)
+{
+	size_t offset;
+	size_t words;
+	t_bool ign;
+
+	words = 1;
+	ign = false;
+	offset = 0;
+	while (s[offset])
+	{
+		if (s[offset] == c && !ign)
+		{
+			++words;
+			ign = true;
+		}
+		else
+			ign = false;
+		++offset;
+	}
+	return (words);
+}
+
+static size_t	get_length(char *head, char c)
+{
+	size_t	max;
+
+	max = 0;
+	while (head[max])
+	{
+		if (head[max] == c)
+			break ;
+		++max;
+	}
+	return (max);
+}
+
+static char		*split_copy(char *head, size_t size)
+{
+	char	*str;
+	size_t	offset;
+
+	if ((str = (char *)malloc(size + 1)))
+	{
+		offset = 0;
+		while  (offset < size)
+		{
+			str[offset] = head[offset];
+			++offset;
+		}
+		str[offset] = 0;
+	}
+	return (str);
+}
+
+char			**ft_split(char const *s, char c)
+{
+	char	**strs;
+	char	*readp;
+	size_t	wd_cnt;
+	size_t	words;
+	size_t	word_len;
+
+	words = count_words(s, c);
+	if ((strs = (char **)malloc(8 * (words + 1))))
+	{
+		strs[words] = NULL;
+		readp = (char *)s;
+		wd_cnt = 0;
+		while (wd_cnt < words)
+		{
+			while (*readp == c)
+				++readp;
+			word_len = get_length(readp, c);
+			*(strs + wd_cnt) = split_copy(readp, word_len);
+			++wd_cnt;
+			readp += word_len;
+		}
+	}
+	return (strs);
+}

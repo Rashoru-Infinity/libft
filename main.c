@@ -6,13 +6,18 @@
 #include <ctype.h>
 
 int main(void) {
-	char *trim;
-	char *str1 = "   \t  \n\n \t\t  \n\n\nHello \t  Please\n Trim me !\n   \n \n \t\t\n  ";
-	char *str2 = " \n\t";
-	if ((trim = ft_strtrim(str1,str2)))
+	char **strs;
+	char *str1 = "abc\ndef\ng";
+	char str2 = '\n';
+	printf("%zu\n", sizeof(char *));
+	printf("%zu\n", sizeof(char));
+	if ((strs = ft_split(str1, str2)))
 	{
-		printf("%s\n", trim);
-		free(trim);
+		for (int i = 0;strs[i] != NULL;++i)
+		{
+			printf("%s\n", strs[i]);
+			free(strs);
+		}
 	}
 	return 0;
 }
