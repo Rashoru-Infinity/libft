@@ -23,13 +23,13 @@ static size_t	count_words(char const *s, char c)
 	offset = 0;
 	while (s[offset])
 	{
-		if ((unsigned char)s[offset] == (unsigned char)c && !ign)
+		if ((unsigned char)s[offset] != (unsigned char)c && ign)
 		{
-			++words;
-			ign = true;
-		}
-		else
 			ign = false;
+			++words;
+		}
+		if ((unsigned char)s[offset] == (unsigned char)c)
+			ign = true;
 		++offset;
 	}
 	return (words);
