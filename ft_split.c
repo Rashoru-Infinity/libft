@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static size_t	count_words(char const *s, char c)
 {
@@ -77,7 +76,6 @@ char			**ft_split(char const *s, char c)
 	size_t	word_len;
 
 	words = count_words(s, c);
-	printf("%zu\n", words);
 	if ((strs = (char **)malloc(8 * (words + 1))))
 	{
 		strs[words] = NULL;
