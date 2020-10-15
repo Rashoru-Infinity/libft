@@ -97,7 +97,7 @@ char			**ft_split(char const *s, char c)
 	if (!s)
 		return (NULL);
 	words = count_words(s, c);
-	if ((strs = (char **)ft_calloc(8 * (words + 1))))
+	if ((strs = (char **)ft_calloc((words + 1), sizeof(char **))))
 	{
 		readp = (char *)s;
 		wd_cnt = 0;
