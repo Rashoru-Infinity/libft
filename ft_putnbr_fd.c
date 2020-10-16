@@ -18,13 +18,13 @@ static int	power(int base, int exp)
 	int val;
 
 	val = 1;
- 	n = 0;
+	n = 0;
 	while (n++ < exp)
 		val *= base;
 	return (val);
 }
 
-static int count_digit(long n)
+static int	count_digit(long n)
 {
 	int digit;
 
@@ -37,7 +37,7 @@ static int count_digit(long n)
 	return (digit);
 }
 
-void	ft_putnbr_fd(int n, int fd)
+void		ft_putnbr_fd(int n, int fd)
 {
 	long	x;
 	int		digit;

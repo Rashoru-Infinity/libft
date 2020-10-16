@@ -47,7 +47,7 @@ static char	*conv(long cpy, int minus, int digit)
 	int		offset;
 	int		div;
 
-	if ((str = (char *)malloc(digit + minus + 1)))
+	if ((str = (char *)malloc(sizeof(char *) * (digit + minus + 1))))
 	{
 		offset = 0;
 		div = power(10, digit - 1);

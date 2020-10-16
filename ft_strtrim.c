@@ -32,7 +32,7 @@ static char	*trimcpy(char const *s1, int del[256])
 			break ;
 		--end;
 	}
-	if ((str = (char *)malloc(end - start + 2)))
+	if ((str = (char *)malloc(sizeof(char *) * (end - start + 2))))
 	{
 		ft_memcpy(str, &s1[start], end - start + 1);
 		str[end - start + 1] = 0;
