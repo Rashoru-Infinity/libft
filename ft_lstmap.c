@@ -11,33 +11,32 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*currlst;
-	void	*tmp;
-
+	t_list *newlst;
+	t_list *curr;
 	if (!lst || !f || !del)
 		return (NULL);
-	currlst = lst;
-	while (currlst)
+	if (!(newlst = ft_lstnew(f(lst->content))))
+		return (NULL);
+	lst = lst->next;
+	curr = newlst;
+	while (lst)
 	{
-		tmp = f(currlst->content);
-		if (tmp)
+		if (!(curr->next = ft_lstnew(f(lst->content))))
 		{
-			(*currlst).content = tmp;
-			currlst = currlst->next;
-		}
-		else
-		{
-			while (lst)
+			while (newlst)
 			{
-				currlst = lst->next;
-				ft_lstdelone(lst, del);
-				lst = currlst;
+				curr = newlst->next;
+				ft_lstdelone(newlst, del);
+				newlst = curr;
 			}
 			return (NULL);
 		}
+		curr = curr->next;
+		lst = lst->next;
 	}
-	return (lst);
+	return (newlst);
 }
