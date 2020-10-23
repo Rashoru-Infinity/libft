@@ -12,7 +12,7 @@ NAME	= libft.a
 all	:	$(NAME)
 
 .c.o	:
-		$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
+		$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME)	:	$(OBJS)
 		$(AR) $(AFLAGS) $(NAME) $(OBJS)
