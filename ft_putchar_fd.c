@@ -25,7 +25,7 @@ void	ft_putchar_fd(char c, int fd)
 	{
 		mask1 = 0b00111111;
 		mask2 = 0b11000000;
-		head = (((unsigned char)c & mask2) >> 6 | mask2);
+		head = ((unsigned char)c & mask2) >> 6 | mask2;
 		tail = ((unsigned char)c & mask1) | 0b10000000;
 		write(fd, &head, 1);
 		write(fd, &tail, 1);
