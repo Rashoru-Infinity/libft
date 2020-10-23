@@ -14,5 +14,20 @@
 
 void	ft_putchar_fd(char c, int fd)
 {
-	write(fd, &c, 1);
+	char head;
+	char tail;
+	char mask1;
+	char mask2;
+
+	if (c <= 0x7f)
+		write(fd, &c, 1);
+	else
+	{
+		mask1 = 0b00111111;
+		mask2 = 0b11000000;
+		head = ((unsigned char)c & mask2 >> 6 | mask2);
+		tail = ((unsigned char)c & mask1 >> 2 | mask1);
+	}
+	write(fd, &head, 1);
+	write(fd, &tail, 1);
 }
