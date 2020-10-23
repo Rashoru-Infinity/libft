@@ -19,9 +19,9 @@ char	*ft_strchr(const char *s, int c)
 	offset = 0;
 	while (true)
 	{
-		if (*(unsigned char *)(s + offset) == c)
+		if (*(s + offset) == c)
 			return ((char *)(s + offset));
-		if (*(unsigned char *)(s + offset) == 0)
+		if (*(s + offset) == 0)
 			break ;
 		++offset;
 	}

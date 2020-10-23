@@ -22,7 +22,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		if (*(unsigned char *)(s1 + offset) != *(unsigned char *)(s2 + offset))
 			break ;
 		if (offset + 1 == n)
-			break ;
+			return (0);
 		++offset;
 	}
 	if (!*(unsigned char *)(s1 + offset) && !*(unsigned char *)(s2 + offset))
@@ -31,5 +31,6 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		return (-*(s2 + offset));
 	if (!*(unsigned char *)(s2 + offset))
 		return (*(unsigned char *)(s1 + offset));
-	return (*(unsigned char *)(s1 + offset) - *(unsigned char *)(s2 + offset));
+	return ((int)(*(unsigned char *)(s1 + offset) \
+			- *(unsigned char *)(s2 + offset)));
 }

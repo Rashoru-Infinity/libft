@@ -73,18 +73,18 @@ static char		*split_copy(char *head, size_t size)
 	return (str);
 }
 
-static void		clear(char **strs, size_t size)
+static void		clear(char ***strs, size_t size)
 {
 	size_t n;
 
 	n = 0;
 	while (n < size)
 	{
-		free(strs[n++]);
-		strs[n] = NULL;
+		free((*strs)[n++]);
+		(*strs)[n] = NULL;
 	}
-	free(strs);
-	strs = NULL;
+	free(*strs);
+	*strs = NULL;
 }
 
 char			**ft_split(char const *s, char c)
@@ -107,8 +107,8 @@ char			**ft_split(char const *s, char c)
 				++readp;
 			if (!(strs[wd_cnt++] = split_copy(readp, get_length(readp, c))))
 			{
-				clear(strs, wd_cnt);
-				break ;
+				clear(&strs, wd_cnt);
+				return (strs);
 			}
 			readp += get_length(readp, c);
 		}

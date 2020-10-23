@@ -21,14 +21,14 @@ static char	*trimcpy(char const *s1, int del[256])
 	start = 0;
 	while (s1[start])
 	{
-		if (!del[(int)s1[start]])
+		if (!del[(int)((unsigned char)s1[start])])
 			break ;
 		++start;
 	}
 	end = ft_strlen(s1) - 1;
 	while (end > start)
 	{
-		if (!del[(int)s1[end]])
+		if (!del[(int)((unsigned char)s1[end])])
 			break ;
 		--end;
 	}

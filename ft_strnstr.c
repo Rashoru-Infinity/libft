@@ -20,15 +20,14 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 
 	head = 0;
 	little_size = 0;
-	while (*(unsigned char *)(little + little_size))
+	while (*(char *)(little + little_size))
 		++little_size;
 	while (true)
 	{
 		offset = 0;
 		while (offset < little_size)
 		{
-			if (*(unsigned char *)(big + head + offset) !=\
-				*(unsigned char *)(little + offset))
+			if (*(big + head + offset) != *(little + offset))
 				break ;
 			++offset;
 		}
