@@ -84,6 +84,7 @@ static void		clear(char ***strs, size_t size)
 		(*strs)[n++] = NULL;
 	}
 	free(*strs);
+	*strs = NULL;
 }
 
 char			**ft_split(char const *s, char c)
