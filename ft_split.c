@@ -80,11 +80,10 @@ static void		clear(char ***strs, size_t size)
 	n = 0;
 	while (n < size)
 	{
-		free((*strs)[n++]);
-		(*strs)[n] = NULL;
+		free((*strs)[n]);
+		(*strs)[n++] = NULL;
 	}
 	free(*strs);
-	*strs = NULL;
 }
 
 char			**ft_split(char const *s, char c)
@@ -97,7 +96,7 @@ char			**ft_split(char const *s, char c)
 	if (!s)
 		return (NULL);
 	words = count_words(s, c);
-	if ((strs = (char **)ft_calloc((words + 1), sizeof(char **))))
+	if ((strs = (char **)ft_calloc((words + 1), sizeof(char *))))
 	{
 		readp = (char *)s;
 		wd_cnt = 0;
