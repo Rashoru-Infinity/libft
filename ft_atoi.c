@@ -34,7 +34,7 @@ int	ft_atoi(const char *nptr)
 	}
 	while ('0' <= nptr[offset] && nptr[offset] <= '9')
 	{
-		if (ULONG_MAX / 10 < n || n * 10 > ULONG_MAX - nptr[offset] - '0')
+		if (ULONG_MAX / 10 < n || n * 10 > ULONG_MAX - (nptr[offset] - '0'))
 			return (sign > 0 ? -1 : 0);
 		n *= 10;
 		n += nptr[offset++] - '0';
